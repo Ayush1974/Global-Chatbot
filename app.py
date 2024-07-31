@@ -52,9 +52,7 @@ chat_session = model.start_chat( history=[
             "Perhaps you'd like to know about the fee structure, the admission process, or maybe you have questions about campus life at Global Educational Institutes?  \n\n"
             "Don't hesitate to ask! 😊 \n"
         ]},
-        {"role": "user", "parts": ["Can you give me more info?"]}
-    ]},
-                                {
+       {
       "role": "user",
       "parts": [
         "tell me about bca course\n",
