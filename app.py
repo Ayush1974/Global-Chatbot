@@ -19,6 +19,19 @@ model = genai.GenerativeModel(
     system_instruction="Keep your answers under 3 paragraphs long, and use an upbeat, chipper tone in your answers.",
 )
 
+# define function to handle prompts
+def get_gemini_response(question):
+    response = chat.send_message(question, stream=True)
+    return response
+
+# set the config
+st.set_page_config(
+    page_title="Global Education Institutes Chat-Bot",
+    page_icon="random",
+    layout="centered",
+    initial_sidebar_state="auto",
+    menu_items=None,
+)
 # Start a new chat session
 chat_session = model.start_chat(
     history=[
@@ -53,13 +66,44 @@ chat_session = model.start_chat(
     ]
 )
 
-st.title("Chat with Google AI")
-st.write("This is a simple app to chat with Google AI using the Gemini-1.5-pro model.")
+st.title("Global Educational Institutes Chat-Bot")
 
-# Text input for user prompt
-user_input = st.text_input("Enter your prompt:", "")
+# initialize history list
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-# If there is user input, get the response
-if user_input:
-    response = chat_session.send_message(user_input)
-    st.write(response.text)
+# populates previous chat
+for message in st.session_state.messages:
+    # display previous messageds
+    with st.chat_message(message["role"]):  # create a chat element
+        st.markdown(message["content"])  # add content to element
+
+# initialize prompt variable to get the input text
+prompt = st.chat_input("Message Gemini-ChatBot")
+
+if prompt:
+    # create chat element for user
+    with st.chat_message("user"):
+        st.markdown(prompt)  # add content to the element
+    st.session_state.messages.append(
+        {"role": "user", "content": prompt}
+    )  # add prompt to the history
+
+    # evaluate the prompt
+    response = get_gemini_response(prompt)
+
+    # create chat element for the assistant
+    with st.chat_message("assistant"):
+        # Create a empty placeholder element
+        placeholder = st.empty()
+
+        # traverse through the response object
+        for a in response:
+            # add data element to the placeholder element
+            placeholder.markdown(a.text)
+
+    # add the final result to the placeholder element
+    placeholder.markdown(response.text)
+
+    # add the result to the history
+    st.session_state.messages.append({"role": "assistant", "content": response.text})
