@@ -67,7 +67,7 @@ def get_gemini_response(question):
 
 # Streamlit page configuration
 st.set_page_config(
-    page_title="Chat with Google AI",
+    page_title="Chat with Global Educational Institutes AI",
     page_icon="🤖",
     layout="centered",
     initial_sidebar_state="auto",
@@ -87,21 +87,31 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Input for user prompt
-user_input = st.text_input("Enter your message:", "")
+prompt = st.chat_input("Message Gemini-ChatBot")
 
-if user_input:
-    # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": user_input})
-    
-    # Display user message
+if prompt:
+    # create chat element for user
     with st.chat_message("user"):
-        st.markdown(user_input)
+        st.markdown(prompt)  # add content to the element
+    st.session_state.messages.append(
+        {"role": "user", "content": prompt}
+    )  # add prompt to the history
 
-    # Get response from the model
-    response_text = get_gemini_response(user_input)
-    
-    # Display the assistant's response
-    if response_text:
-        st.session_state.messages.append({"role": "assistant", "content": response_text})
-        with st.chat_message("assistant"):
-            st.markdown(response_text)
+    # evaluate the prompt
+    response = get_gemini_response(prompt)
+
+    # create chat element for the assistant
+    with st.chat_message("assistant"):
+        # Create a empty placeholder element
+        placeholder = st.empty()
+
+        # traverse through the response object
+        for a in response:
+            # add data element to the placeholder element
+            placeholder.markdown(a.text)
+
+    # add the final result to the placeholder element
+    placeholder.markdown(response.text)
+
+    # add the result to the history
+    st.session_state.messages.append({"role": "assistant", "content": response.text})
