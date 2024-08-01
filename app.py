@@ -189,7 +189,7 @@ with chat_container:
 with st.container():
     user_input = st.text_input("Enter text here","", key="")
     if user_input not in st.session_state:
-        st.session_state.my_text = ""
+        st.session_state.user_input = ""
 
     if user_input:
         # Add user message to chat history
@@ -207,4 +207,5 @@ with st.container():
             st.session_state.messages.append({"role": "assistant", "content": response_text})
             with chat_container:
                 st.chat_message("assistant").markdown(response_text)
+        st.session_state.user_input = ""
         
