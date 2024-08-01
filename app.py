@@ -237,7 +237,7 @@ st.set_page_config(
 
 # Title and description
 st.title("Chat with Global Educational Institute")
-st.image("https://globalinst.in/wp-content/uploads/2022/01/logo.png", width=200px)
+st.image("https://globalinst.in/wp-content/uploads/2022/01/logo.png", width=200)
 st.write("What can I do to assist you?🙋‍♀️")
 
 # Initialize session state for chat history
