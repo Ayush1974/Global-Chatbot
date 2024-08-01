@@ -229,15 +229,16 @@ def get_gemini_response(question):
 
 # Streamlit page configuration
 st.set_page_config(
-    page_title="Chat with Google AI",
+    page_title="Chat with Global Educational Institute AI",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="auto",
 )
 
 # Title and description
-st.title("Chat with Google AI")
-st.write("This is a simple app to chat with Google AI using the Gemini-1.5-pro model.")
+st.title("Chat with Global Educational Institute")
+st.image("sunrise.jpg", width=200px)
+st.write("What can I do to assist you?")
 
 # Initialize session state for chat history
 if "messages" not in st.session_state:
