@@ -168,8 +168,9 @@ st.set_page_config(
 )
 
 # Title and description
-st.title("Chat with Google AI")
-st.write("This is a simple app to chat with Google AI using the Gemini-1.5-pro model.")
+st.title("Chat with Global Educational Institute AI chatbot")
+st.image("https://globalinst.in/wp-content/uploads/2022/01/logo.png", width=300)
+st.write("Hi there I am Chatbot made by Global Educational Institute. How can I assist you?🙋‍♀️")
 
 # Initialize session state for chat history
 if "messages" not in st.session_state:
@@ -186,7 +187,7 @@ with chat_container:
 
 # Input for user prompt (Positioned at the bottom)
 with st.container():
-    user_input = st.text_input("Enter your message:", "", key="input")
+    user_input = st.text_input("Enter your query:", "", key="input")
 
     if user_input:
         # Add user message to chat history
