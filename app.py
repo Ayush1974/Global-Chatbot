@@ -152,12 +152,8 @@ chat_session = model.start_chat( history=[
 )
 # Function to handle prompts
 def get_gemini_response(question):
-    try:
         response = chat_session.send_message(question)
         return response.text
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
-        return "Sorry, I couldn't process your request."
 
 # Streamlit page configuration
 st.set_page_config(
@@ -170,7 +166,7 @@ st.set_page_config(
 # Title and description
 st.title("Chat with Global Educational Institute AI chatbot")
 left_co, cent_co,last_co = st.columns(3)
-with cent_co:
+with last_co:
     st.image("https://globalinst.in/wp-content/uploads/2022/01/logo.png", width=125)
 st.write("Hi there I am Chatbot made by Global Educational Institute. How can I assist you?🙋‍♀️")
 
