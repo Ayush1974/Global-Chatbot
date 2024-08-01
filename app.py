@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # Configure the Generative AI Model
-api_key = 'AIzaSyCPxzdxYHq8D27nL9R8pzKl6EJAj4vdbRQ'
+api_key = 'AIzaSyBu4xfmZy4O7efFR7efV5QXsMGXBCIIh6c'
 if api_key is None:
     st.error("API Key not found in secrets.")
     st.stop()
