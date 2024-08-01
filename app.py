@@ -170,7 +170,7 @@ st.set_page_config(
 
 # Title and description
 st.title("Chat with Global Educational Institutes AI")
-st.write("This is a simple app to chat with Global Educational Institutes AI")
+st.write(" Hello I am Global Educational Institutes AI How can I help you?")
 
 # Initialize session state for chat history
 if "messages" not in st.session_state:
