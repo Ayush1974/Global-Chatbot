@@ -169,7 +169,9 @@ st.set_page_config(
 
 # Title and description
 st.title("Chat with Global Educational Institute AI chatbot")
-st.image("https://globalinst.in/wp-content/uploads/2022/01/logo.png", width=150)
+left_co, cent_co,last_co = st.columns(3)
+with cent_co:
+    st.image("https://globalinst.in/wp-content/uploads/2022/01/logo.png", width=125)
 st.write("Hi there I am Chatbot made by Global Educational Institute. How can I assist you?🙋‍♀️")
 
 # Initialize session state for chat history
