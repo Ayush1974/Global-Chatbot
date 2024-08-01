@@ -153,13 +153,9 @@ chat_session = model.start_chat( history=[
 
 # Function to handle prompts
 def get_gemini_response(question):
-    try:
         response = chat_session.send_message(question)
         return response.text
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
-        return "Sorry, I couldn't process your request."
-
+    
 # Streamlit page configuration
 st.set_page_config(
     page_title="Chat with Global AI",
@@ -187,7 +183,7 @@ with chat_container:
 
 # Input for user prompt (Positioned at the bottom)
 with st.container():
-    user_input = st.text_input("Enter text here","", key="")
+    user_input = st.text_input("Enter your message here","", key="input")
     
 
     if user_input:
