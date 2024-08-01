@@ -201,6 +201,6 @@ with st.container():
             st.session_state.messages.append({"role": "assistant", "content": response_text})
             with chat_container:
                 st.chat_message("assistant").markdown(response_text)
-        st.session_state.user_input = ""
+        
         
         
