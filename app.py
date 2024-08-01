@@ -183,12 +183,12 @@ with chat_container:
 
 # Input for user prompt (Positioned at the bottom)
 with st.container():
-    user_input = st.text_input("Enter your message here","", key="input")
-    
+    user_input = st.text_input("Enter your message:", "", key="input")
 
     if user_input:
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": user_input})
+        
         # Display user message
         with chat_container:
             st.chat_message("user").markdown(user_input)
@@ -201,6 +201,6 @@ with st.container():
             st.session_state.messages.append({"role": "assistant", "content": response_text})
             with chat_container:
                 st.chat_message("assistant").markdown(response_text)
-        
+    
         
         
