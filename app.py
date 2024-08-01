@@ -193,8 +193,8 @@ with st.container():
         st.session_state.my_text = ""
 
     def submit():
-        st.session_state.my_text = st.session_state.widget
-        st.session_state.widget = ""
+        st.session_state.my_text = st.session_state.input
+        st.session_state.input = ""
     st.text_input("Enter text here", key="input", on_change=submit)
     #my_text = st.session_state.my_text
     #st.write(my_text)
