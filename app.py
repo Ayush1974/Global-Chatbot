@@ -187,8 +187,7 @@ with chat_container:
 
 # Input for user prompt (Positioned at the bottom)
 with st.container():
-    user_input = st.text_input("Enter text here", key="", on_change="input")
-
+    user_input = st.text_input("Enter text here","", key="")
     if user_input not in st.session_state:
         st.session_state.my_text = ""
 
