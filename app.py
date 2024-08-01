@@ -189,7 +189,7 @@ with chat_container:
 with st.container():
     user_input = st.text_input("Enter your message:", "", key="input")
 
-    if "useer_input" not in st.session_state:
+    if "user_input" not in st.session_state:
         st.session_state.my_text = ""
         
     if user_input:
