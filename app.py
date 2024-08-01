@@ -187,19 +187,11 @@ with chat_container:
 
 # Input for user prompt (Positioned at the bottom)
 with st.container():
-    user_input = ""
+    user_input = st.text_input("Enter text here", key="", on_change="input")
 
-    if "user_input" not in st.session_state:
+    if user_input not in st.session_state:
         st.session_state.my_text = ""
 
-    def submit():
-        st.session_state.my_text = st.session_state.input
-        st.session_state.input = ""
-    st.text_input("Enter text here", key="input", on_change=submit)
-    #my_text = st.session_state.my_text
-    #st.write(my_text)
-
-        
     if user_input:
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": user_input})
