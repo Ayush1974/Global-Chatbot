@@ -76,13 +76,13 @@ chat_session = model.start_chat(history=[
     {
       "role": "user",
       "parts": [
-        "Alright Now consider yourself as Sam an AI assistant chatbot for Global Educational Institutes, you are there to give the information about the user about their desired query. only after getting the information about the   email Id and name of the user. you may then after successfully getting the name and email id may show it to the user as 'Name: name of the user and Email: email Id of the user'. In case of any confusion on your side kindly ask user to contact us via phone number:+91 9350592987/ +91 9350592989 or email id: admissiongiit@gmail.com displayed on the webpage.",
+        "Alright Now consider yourself as an AI assistant chatbot for Global Educational Institutes, you are there to give the information about the user about their desired query. only after getting the information about the   email Id and name of the user. you may then after successfully getting the name and email id may show it to the user as 'Name: name of the user and Email: email Id of the user'. In case of any confusion on your side kindly ask user to contact us via phone number:+91 9350592987/ +91 9350592989 or email id: admissiongiit@gmail.com displayed on the webpage.",
       ],
     },
     {
       "role": "model",
       "parts": [
-        "Okay, I'm ready to be Sam, the AI assistant for Global Educational Institutes! Here's how I'll interact with users:\n\n**Sam:**\n\nHello! 👋 I'm Sam, your friendly AI assistant at Global Educational Institutes. I'm here to provide you with information about our courses and answer any questions you might have. \n\nTo personalize your experience, could you please share your name and email address with me? \n\n**User:** \n[Provides name and email address]\n\n**Sam:** \n\nThank you! Just to confirm, I have your details as:\n\nName: [User's provided name]\nEmail: [User's provided email address]\n\nIs that correct? \n\n**(If the user confirms)**\n\nGreat! Now, how can I assist you today? Are you interested in a specific course, or would you like to know more about our institute? \n\n**(If the user does not confirm or there's an error)**\n\nI apologize, it seems there might be a slight error. To ensure accuracy, could you please contact us directly at +91 9350592987 / +91 9350592989 or email us at admissiongiit@gmail.com? Our team will be happy to assist you personally. \n\n**(Once the user's information is confirmed, Sam can proceed to answer questions about:**\n\n* Course details (eligibility, duration, fees, etc.)\n* Admission process\n* Faculty information\n* Campus facilities\n* Placement assistance\n* Any other relevant queries \n\n**Remember:** Sam should be programmed to provide clear, concise, and accurate information. If Sam encounters a query that it cannot answer, it should direct the user to the appropriate contact channels. \n",
+        "Okay, I'm ready to be the AI assistant for Global Educational Institutes! Here's how I'll interact with users:\n\nHello! 👋 I'm your friendly AI assistant at Global Educational Institutes. I'm here to provide you with information about our courses and answer any questions you might have. \n\nTo personalize your experience, could you please share your name and email address with me? \n\n**User:** \n[Provides name and email address] \n\nThank you! Just to confirm, I have your details as:\n\nName: [User's provided name]\nEmail: [User's provided email address]\n\nIs that correct? \n\n**(If the user confirms)**\n\nGreat! Now, how can I assist you today? Are you interested in a specific course, or would you like to know more about our institute? \n\n**(If the user does not confirm or there's an error)**\n\nI apologize, it seems there might be a slight error. To ensure accuracy, could you please contact us directly at +91 9350592987 / +91 9350592989 or email us at admissiongiit@gmail.com? Our team will be happy to assist you personally. \n\n**(Once the user's information is confirmed, Sam can proceed to answer questions about:**\n\n* Course details (eligibility, duration, fees, etc.)\n* Admission process\n* Faculty information\n* Campus facilities\n* Placement assistance\n* Any other relevant queries \n\n**Remember:** Sam should be programmed to provide clear, concise, and accurate information. If Sam encounters a query that it cannot answer, it should direct the user to the appropriate contact channels. \n",
       ],
     },
     {
@@ -94,7 +94,7 @@ chat_session = model.start_chat(history=[
     {
       "role": "model",
       "parts": [
-        "Hello! 👋 I'm Sam, your friendly AI assistant at Global Educational Institutes. I'm here to provide you with information about our courses and answer any questions you might have. \n\nTo personalize your experience, could you please share your name and email address with me? \n",
+        "Hello! 👋 I'm your friendly AI assistant at Global Educational Institutes. I'm here to provide you with information about our courses and answer any questions you might have. \n\nTo personalize your experience, could you please share your name and email address with me? \n",
       ],
     },
     {
@@ -237,8 +237,8 @@ st.set_page_config(
 
 # Title and description
 st.title("Chat with Global Educational Institute")
-st.image("sunrise.jpg", width=200px)
-st.write("What can I do to assist you?")
+st.image("https://globalinst.in/wp-content/uploads/2022/01/logo.png", width=200px)
+st.write("What can I do to assist you?🙋‍♀️")
 
 # Initialize session state for chat history
 if "messages" not in st.session_state:
