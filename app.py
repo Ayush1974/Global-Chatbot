@@ -195,7 +195,7 @@ with st.container():
     def submit():
         st.session_state.my_text = st.session_state.widget
         st.session_state.widget = ""
-    st.text_input("Enter text here", key="widget", on_change=submit)
+    st.text_input("Enter text here", key="input", on_change=submit)
     #my_text = st.session_state.my_text
     #st.write(my_text)
 
